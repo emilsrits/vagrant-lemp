@@ -14,8 +14,6 @@ sudo apt-get install -qq unzip curl git > /dev/null
 # Install basic LEMP stack
 # NGINX
 echo "Installing NGINX..."
-# sudo add-apt-repository -y ppa:nginx/stable > /dev/null
-# sudo apt-get update > /dev/null
 sudo apt-get install -y nginx > /dev/null
 # PHP
 echo "Installing PHP..."
@@ -28,15 +26,6 @@ sudo apt-get install -y php7.0-fpm php7.0-mysql php7.0-cli php7.0-mcrypt php7.0-
 # MySQL
 echo "Preparing MySQL..."
 sudo apt-get install -y debconf-utils > /dev/null
-# sudo wget http://dev.mysql.com/get/mysql-apt-config_0.8.1-1_all.deb > /dev/null
-
-# echo mysql-apt-config mysql-apt-config/repo-distro select ubuntu | debconf-set-selections
-# echo mysql-apt-config mysql-apt-config/repo-codename select trusty64 | debconf-set-selections
-# echo mysql-apt-config mysql-apt-config/select-server select mysql-5.7 | debconf-set-selections
-# echo mysql-community-server mysql-community-server/root-pass password root | debconf-set-selections
-# echo mysql-community-server mysql-community-server/re-root-pass password root | debconf-set-selections
-
-# sudo dpkg -i mysql-apt-config_0.8.1-1_all.deb > /dev/null
 
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
