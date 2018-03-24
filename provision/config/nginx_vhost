@@ -2,11 +2,11 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    root /var/www;
+    root /var/www/html;
 
     index index.php index.html index.htm index.nginx-debian.html;
 
-    server_name vagrant.dev;
+    server_name vagrant.local;
 
     location / {
         try_files $uri $uri/ =404;

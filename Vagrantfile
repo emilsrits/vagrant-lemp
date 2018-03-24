@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-hostname            = "vagrant.dev"
+hostname            = "vagrant.local"
 server_ip           = "192.168.10.33"
 
 Vagrant.configure(2) do |config|
@@ -18,8 +18,8 @@ Vagrant.configure(2) do |config|
   # Set up default hostname
   config.vm.hostname = hostname
 
-  # Sync current directory to "/var/www" directory on the VM
-  config.vm.synced_folder ".", "/var/www", create: true, group: "www-data", owner: "www-data"
+  # Sync current directory to "/vagrant" directory on the VM
+  config.vm.synced_folder ".", "/vagrant", create: true, group: "www-data", owner: "www-data"
 
   config.vm.provider "virtualbox" do |vb|
     # Set VM name
