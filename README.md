@@ -1,2 +1,6 @@
 # vagrant-lemp
-vagrant config with LEMP stack
+Vagrant config with LEMP stack
+
+* Run `vagrant up`
+* Add hostname and server_ip from Vagrantfile to your hosts file
+* Visit hostname
